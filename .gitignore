@@ -1,0 +1,8 @@
+node_modules
+pnpm-lock.yaml
+/src/common/libs/prisma
+
+# env files (can opt-in for committing if needed)
+.env*
+!.env.example
+dist

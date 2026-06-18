@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "target": "ES2023",
+    "strict": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@common/*": ["src/common/*"],
+      "@features/*": ["src/features/*"]
+    },
+    "rootDir": ".",
+    "outDir": "./dist",
+    "ignoreDeprecations": "6.0"
+  },
+  "include": ["./prisma.config.ts", "./src/**/*.ts"],
+  "exclude": ["dist", "node_modules"]
+}
