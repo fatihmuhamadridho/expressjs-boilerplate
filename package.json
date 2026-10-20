@@ -2,7 +2,7 @@
   "name": "expressjs-boilerplate",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
