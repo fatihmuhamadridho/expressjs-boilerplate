@@ -1,4 +1,6 @@
-export class InvalidProductIdError extends Error {
+import { InvalidInputError } from '../../../../pkg/errs/invalid-input.error';
+
+export class InvalidProductIdError extends InvalidInputError {
   constructor() {
     super('Product id must be a positive integer');
     this.name = 'InvalidProductIdError';
@@ -11,7 +13,7 @@ export class ProductId {
 
   static create(value: string): ProductId {
     const id = Number(value);
-    if (!Number.isSafeInteger(id) || id < 1) throw new InvalidProductIdError();
+    if (!/^[1-9]\d*$/.test(value) || !Number.isSafeInteger(id)) throw new InvalidProductIdError();
     return new ProductId(id);
   }
 

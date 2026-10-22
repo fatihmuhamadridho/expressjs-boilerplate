@@ -1,4 +1,4 @@
-import type { DummyJsonResponse } from '../../../../common/dummyjson/application/dummyjson.interface';
+import type { ResourceResult } from '../../../../pkg/httpclient/http-client';
 import type { CartId } from '../valueobject/cart-id';
 
 export interface CartQuery {
@@ -7,16 +7,17 @@ export interface CartQuery {
 }
 
 export interface CartCommand {
+  queryString?: string;
   headers: Readonly<Record<string, string>>;
   body?: Uint8Array;
 }
 
 export interface CartRepository {
-  getAll(query: CartQuery): Promise<DummyJsonResponse>;
-  getById(id: CartId, query: CartQuery): Promise<DummyJsonResponse>;
-  getByUserId(userId: string, query: CartQuery): Promise<DummyJsonResponse>;
-  add(command: CartCommand): Promise<DummyJsonResponse>;
-  replace(id: CartId, command: CartCommand): Promise<DummyJsonResponse>;
-  update(id: CartId, command: CartCommand): Promise<DummyJsonResponse>;
-  delete(id: CartId, command: CartCommand): Promise<DummyJsonResponse>;
+  getAll(query: CartQuery): Promise<ResourceResult>;
+  getById(id: CartId, query: CartQuery): Promise<ResourceResult>;
+  getByUserId(userId: string, query: CartQuery): Promise<ResourceResult>;
+  add(command: CartCommand): Promise<ResourceResult>;
+  replace(id: CartId, command: CartCommand): Promise<ResourceResult>;
+  update(id: CartId, command: CartCommand): Promise<ResourceResult>;
+  delete(id: CartId, command: CartCommand): Promise<ResourceResult>;
 }

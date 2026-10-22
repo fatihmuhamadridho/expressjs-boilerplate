@@ -1,0 +1,117 @@
+# API endpoints
+
+All paths are relative to the application origin. JSON responses use the envelope documented in the root README. Binary image/icon responses remain binary.
+
+| Feature        | Method | Path                                           |
+| -------------- | ------ | ---------------------------------------------- |
+| Auth           | POST   | `/api/auth/login`                              |
+| Auth           | POST   | `/api/auth/logout`                             |
+| Auth           | POST   | `/api/auth/refresh`                            |
+| Auth           | GET    | `/api/auth/me`                                 |
+| Cart           | GET    | `/api/carts`                                   |
+| Cart           | GET    | `/api/carts/user/:userId`                      |
+| Cart           | POST   | `/api/carts/add`                               |
+| Cart           | GET    | `/api/carts/:id`                               |
+| Cart           | PUT    | `/api/carts/:id`                               |
+| Cart           | PATCH  | `/api/carts/:id`                               |
+| Cart           | DELETE | `/api/carts/:id`                               |
+| Comment        | GET    | `/api/comments`                                |
+| Comment        | GET    | `/api/comments/post/:postId`                   |
+| Comment        | POST   | `/api/comments/add`                            |
+| Comment        | GET    | `/api/comments/:id`                            |
+| Comment        | PUT    | `/api/comments/:id`                            |
+| Comment        | PATCH  | `/api/comments/:id`                            |
+| Comment        | DELETE | `/api/comments/:id`                            |
+| CustomResponse | POST   | `/api/c/generate`                              |
+| CustomResponse | GET    | `/api/c/:identifier`                           |
+| Http           | GET    | `/api/http/:httpCode/:message`                 |
+| Http           | GET    | `/api/http/:httpCode`                          |
+| Icon           | GET    | `/api/icon`                                    |
+| Icon           | GET    | `/api/icon/:hash/:size`                        |
+| Icon           | GET    | `/api/icon/:hash`                              |
+| Image          | GET    | `/api/image/:size/:background/:color/:type`    |
+| Image          | GET    | `/api/image/:size/:background/:color`          |
+| Image          | GET    | `/api/image/:size/:background`                 |
+| Image          | GET    | `/api/image/:size`                             |
+| Ip             | GET    | `/api/ip`                                      |
+| OpenAPI        | GET    | `/api/openapi.json`                            |
+| Post           | GET    | `/api/posts`                                   |
+| Post           | GET    | `/api/posts/search`                            |
+| Post           | GET    | `/api/posts/tag-list`                          |
+| Post           | GET    | `/api/posts/tags`                              |
+| Post           | GET    | `/api/posts/tag/:tag`                          |
+| Post           | GET    | `/api/posts/user/:userId`                      |
+| Post           | GET    | `/api/posts/:postId/comments`                  |
+| Post           | POST   | `/api/posts/add`                               |
+| Post           | GET    | `/api/posts/:id`                               |
+| Post           | PUT    | `/api/posts/:id`                               |
+| Post           | PATCH  | `/api/posts/:id`                               |
+| Post           | DELETE | `/api/posts/:id`                               |
+| Product        | GET    | `/api/products`                                |
+| Product        | GET    | `/api/products/search`                         |
+| Product        | GET    | `/api/products/category-list`                  |
+| Product        | GET    | `/api/products/categories`                     |
+| Product        | GET    | `/api/products/category/:category`             |
+| Product        | POST   | `/api/products/add`                            |
+| Product        | GET    | `/api/products/:id`                            |
+| Product        | PUT    | `/api/products/:id`                            |
+| Product        | PATCH  | `/api/products/:id`                            |
+| Product        | DELETE | `/api/products/:id`                            |
+| Quote          | GET    | `/api/quotes`                                  |
+| Quote          | GET    | `/api/quotes/random`                           |
+| Quote          | GET    | `/api/quotes/random/:length`                   |
+| Quote          | GET    | `/api/quotes/:id`                              |
+| Recipe         | GET    | `/api/recipes`                                 |
+| Recipe         | GET    | `/api/recipes/search`                          |
+| Recipe         | GET    | `/api/recipes/tags`                            |
+| Recipe         | GET    | `/api/recipes/tag/:tag`                        |
+| Recipe         | GET    | `/api/recipes/meal-type/:mealType`             |
+| Recipe         | POST   | `/api/recipes/add`                             |
+| Recipe         | GET    | `/api/recipes/:id`                             |
+| Recipe         | PUT    | `/api/recipes/:id`                             |
+| Recipe         | PATCH  | `/api/recipes/:id`                             |
+| Recipe         | DELETE | `/api/recipes/:id`                             |
+| Test           | GET    | `/api/test`                                    |
+| Test           | POST   | `/api/test`                                    |
+| Test           | PUT    | `/api/test`                                    |
+| Test           | PATCH  | `/api/test`                                    |
+| Test           | DELETE | `/api/test`                                    |
+| Todo           | GET    | `/api/todos`                                   |
+| Todo           | GET    | `/api/todos/random`                            |
+| Todo           | GET    | `/api/todos/random/:length`                    |
+| Todo           | GET    | `/api/todos/user/:userId`                      |
+| Todo           | POST   | `/api/todos/add`                               |
+| Todo           | GET    | `/api/todos/:id`                               |
+| Todo           | PUT    | `/api/todos/:id`                               |
+| Todo           | PATCH  | `/api/todos/:id`                               |
+| Todo           | DELETE | `/api/todos/:id`                               |
+| TwoFactor      | GET    | `/api/2fa`                                     |
+| TwoFactor      | POST   | `/api/2fa`                                     |
+| User           | GET    | `/api/users`                                   |
+| User           | GET    | `/api/users/search`                            |
+| User           | GET    | `/api/users/filter`                            |
+| User           | GET    | `/api/users/me`                                |
+| User           | POST   | `/api/users/add`                               |
+| User           | POST   | `/api/users/login`                             |
+| User           | GET    | `/api/users/:userId/carts`                     |
+| User           | GET    | `/api/users/:userId/posts`                     |
+| User           | GET    | `/api/users/:userId/todos`                     |
+| User           | GET    | `/api/users/:id`                               |
+| User           | PUT    | `/api/users/:id`                               |
+| User           | PATCH  | `/api/users/:id`                               |
+| User           | DELETE | `/api/users/:id`                               |
+| Webhook        | POST   | `/api/webhook/create`                          |
+| Webhook        | GET    | `/api/webhook/:identifier/requests/:requestId` |
+| Webhook        | DELETE | `/api/webhook/:identifier/requests/:requestId` |
+| Webhook        | GET    | `/api/webhook/:identifier/requests`            |
+| Webhook        | GET    | `/api/webhook/:identifier`                     |
+| Webhook        | POST   | `/api/webhook/:identifier`                     |
+| Webhook        | PUT    | `/api/webhook/:identifier`                     |
+| Webhook        | PATCH  | `/api/webhook/:identifier`                     |
+| Webhook        | DELETE | `/api/webhook/:identifier`                     |
+
+The collection resources also retain singular aliases (`/product`, `/cart`, `/user`, `/post`, `/comment`, `/todo`, `/quote`, `/recipe`) beneath `/api`.
+
+Authenticated collection mounts are available under `/api/auth/products`, `/api/auth/carts`, `/api/auth/users`, `/api/auth/posts`, `/api/auth/comments`, `/api/auth/todos`, `/api/auth/quotes`, and `/api/auth/recipes`. They use the same resource actions and forward authorization to the corresponding authenticated upstream paths.
+
+There is no provider-prefixed public route. Unknown routes return the shared JSON 404 envelope.
